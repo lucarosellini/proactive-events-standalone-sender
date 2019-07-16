@@ -16,6 +16,7 @@ This code will only send ```broadcast``` notifications to all those users having
 * ```client_id```: the client_id obtained from the "Permissions" tab of Alexa developer console.
 * ```client_secret```: the client_secret obtained from the "Permissions" tab of Alexa developer console.
 * ```message```: the message you want to send to skill users.
+* ```validity_hours```: number of hours during which this message will be considered valid (defaults to 24).
 
 Event will adhere to the template in [```messageAlertEvent.json```](./messageAlertEvent.json). You might further customize this template if you want.
 

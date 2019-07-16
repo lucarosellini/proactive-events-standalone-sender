@@ -1,7 +1,7 @@
 {
-    "timestamp": "2019-07-16T02:10:01.00Z",
+    "timestamp": "",
     "referenceId": "03",
-    "expiryTime": "2019-07-17T02:10:01.00Z",
+    "expiryTime": "",
     "event": {
       "name": "AMAZON.MessageAlert.Activated",
       "payload": {
