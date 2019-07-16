@@ -1,0 +1,32 @@
+[
+    {
+        "environment": "pro",
+        "region": "EU",
+        "notification_service_url": "https://api.eu.amazonalexa.com/v1/proactiveEvents/"
+    },
+    {
+        "environment": "dev",
+        "region": "EU",
+        "notification_service_url": "https://api.eu.amazonalexa.com/v1/proactiveEvents/stages/development"
+    },
+    {
+        "environment": "pro",
+        "region": "NA",
+        "notification_service_url": "https://api.amazonalexa.com/v1/proactiveEvents/"
+    },
+    {
+        "environment": "dev",
+        "region": "NA",
+        "notification_service_url": "https://api.amazonalexa.com/v1/proactiveEvents/stages/development"
+    },
+    {
+        "environment": "pro",
+        "region": "FE",
+        "notification_service_url": "https://api.fe.amazonalexa.com/v1/proactiveEvents/"
+    },
+    {
+        "environment": "dev",
+        "region": "FE",
+        "notification_service_url": "https://api.fe.amazonalexa.com/v1/proactiveEvents/stages/development"
+    }
+]

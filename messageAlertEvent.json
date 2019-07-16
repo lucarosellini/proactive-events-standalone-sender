@@ -1,0 +1,25 @@
+{
+    "timestamp": "2019-07-16T02:10:01.00Z",
+    "referenceId": "03",
+    "expiryTime": "2019-07-17T02:10:01.00Z",
+    "event": {
+      "name": "AMAZON.MessageAlert.Activated",
+      "payload": {
+        "state": {
+          "status": "UNREAD",
+          "freshness": "NEW"
+        },
+        "messageGroup": {
+          "urgency": "URGENT",
+          "creator": {
+            "name": ""
+          },
+          "count": 1
+        }
+      }
+    },
+    "relevantAudience": {
+        "type": "Multicast",
+        "payload": {}
+    }
+}
