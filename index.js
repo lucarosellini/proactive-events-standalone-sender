@@ -59,28 +59,28 @@ var myArgs = process.argv.slice(2);
 
 switch (myArgs[0]) {
     case 'dev':
-        console.log('Development environment selected.');
+        console.log('Development endpoint selected.');
         break;
     case 'pro':
-        console.log('Production environment selected.');
+        console.log('Production endpoint selected.');
         break;
     default:
-        console.log('You must use an enviroment. Valid options are "dev" or "pro".');
+        console.log('You must specify an enviroment. Valid options are "dev" or "pro".');
         process.exit(1);
 }
 
 switch (myArgs[1]) {
     case 'FE':
-        console.log('Far East region selected.');
+        console.log('Using Far East endpoint.');
         break;
     case 'EU':
-        console.log('Europe region selected.');
+        console.log('Using Europe endpoint.');
         break;
     case 'NA':
-        console.log('North America region selected.');
+        console.log('Using North America endpoint.');
         break;
     default:
-        console.log('You must select a region. Valid options are "NA", "EU" or "FE".');
+        console.log('You must specify a region. Valid options are "NA", "EU" or "FE".');
         process.exit(1);
 }
 
