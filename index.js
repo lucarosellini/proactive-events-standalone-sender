@@ -57,7 +57,7 @@ async function sendNotification(skill, config){
     fetchToken(skill.client_id, skill.client_secret)
         .then(function (body) {
             // we correctly got the access_token, let's send the notification.
-            const messageAlert = require("./messageAlertEvent.json");
+            const messageAlert = require("./message-template.json");
             messageAlert.event.payload.messageGroup.creator.name = skill.message;
 
             const ts = new Date();
