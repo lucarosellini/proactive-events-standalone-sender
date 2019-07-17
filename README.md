@@ -2,13 +2,11 @@
 
 This project aims at simplifying sending proactive events to a skill from an external standalone process. 
 
-At a very high level, this project performs the following operations for each one of the skills configured in [```skills.json```](./skills.json):
-1. Obtains the authentication token from Alexa by using the skill ```client_id``` and ```client_secret```.
-2. Use the auth token to send the actual notification configured in [```messageAlertEvent.json```](./messageAlertEvent.json) using the message provided in [```skills.json```](./skills.json).
+For each one of the skills configured in [```skills.json```](./skills.json), this code performs the following operations:
+1. Obtains an authentication token from Alexa by using the skill ```client_id``` and ```client_secret```.
+2. Uses the authentication token obtained in the previous step to *broadcast* notifications to those users of the skill that granted permissions to notifications. Sent events follow the [```AMAZON.MessageAlert.Activated```](https://developer.amazon.com/docs/smapi/schemas-for-proactive-events.html#message-alert) schema. You can edit the event template in [```messageAlertEvent.json```](./messageAlertEvent.json); the template ```messageAlert.event.payload.messageGroup.creator.name``` is overridden at runtime using the ```message``` property provided in [```skills.json```](./skills.json).
 
-You need to configure the [```skills.json```](./skills.json) file with the list of target skills for notifications. Please remember to configure your skills to use proactive events as described in the [Alexa Proactive Events API documentation](https://developer.amazon.com/docs/smapi/proactive-events-api.html). This project will only send [```AMAZON.MessageAlert.Activated```](https://developer.amazon.com/docs/smapi/schemas-for-proactive-events.html#message-alert) events.
-
-This code will only send ```broadcast``` notifications to all those users having enabled notifications in the skills.
+Remember that if you want to send proactive events to your skill, you first need to add notification permissions to the skill and declare the schema(s) you'll be using. This is described in the official [Alexa Proactive Events API documentation](https://developer.amazon.com/docs/smapi/proactive-events-api.html). 
 
 [```skills.json```](./skills.json) is an array of objects with the following properties:
 
