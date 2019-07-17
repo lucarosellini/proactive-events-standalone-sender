@@ -37,6 +37,7 @@ To download project dependencies simply run the following in the project root:
 You need to pass two command line arguments to properly run this project:
 * ```environment```: weather the target events will be sent in the 'live' or 'development' environments. Admitted values are ```dev``` and ```pro```.
 * ```region```: identifies the region of the Alexa endpoint to use to send proactive events. Admitted values are ```EU``` (Europe), ```NA``` (North America) and ```FE``` (Far East). **Remember**: if your users are located in NA and you are sending events trough the EU endpoint, users located in NA won't receive any notification.
+* ```message```: this is optional and lets you override the message property defined in [```skills.json```](./skills.json). The same message will be sent to all configured skills.
 
 Once you've configured your skill ```client_id``` and ```client_secret``` in [```skills.json```](./skills.json), you can just run the project as:
 

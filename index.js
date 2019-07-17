@@ -104,6 +104,13 @@ var parser = new ArgumentParser({
     }
   );
 
+  parser.addArgument(
+    [ '-m', '--message' ],
+    {
+        help: 'The message to send to the configured skills, this overrides the "message" property in skills.json'
+    }
+  );
+
 var args = parser.parseArgs();
 console.dir(args);
 
@@ -132,5 +139,8 @@ if (!config || config.length == 0){
     Triggers event sending.
 */
 skills.forEach(skill => {
+    if (args.message){
+        skill.message = args.message;
+    }
     sendNotification(skill, config[0]);
 });
