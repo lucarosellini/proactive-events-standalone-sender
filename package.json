@@ -9,6 +9,7 @@
   "author": "Luca Rosellini <luca.rosellini@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "argparse": "^1.0.10",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   }

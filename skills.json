@@ -3,6 +3,7 @@
         "skill_name": "",
         "client_id": "",
         "client_secret": "",
-        "message": ""
+        "message": "",
+        "validity_hours": "24"
     }
 ]

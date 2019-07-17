@@ -40,8 +40,8 @@ You need to pass two command line arguments to properly run this project:
 
 Once you've configured your skill ```client_id``` and ```client_secret``` in [```skills.json```](./skills.json), you can just run the project as:
 
-    node index.js <environment> <region>
+    node index.js -e <environment> -r <region>
 
 For example:
 
-    node index.js dev EU
+    node index.js -e dev -r EU

@@ -1,4 +1,5 @@
 var rp = require('request-promise');
+var ArgumentParser = require('argparse').ArgumentParser;
 
 /**
  * Fetches the access_token from the skill identified by the provided credentials.
@@ -81,37 +82,30 @@ async function sendNotification(skill, config){
 /*
     Command line event parsing.
 */
-var myArgs = process.argv.slice(2);
+var parser = new ArgumentParser({
+    version: '1.0.0',
+    addHelp:true,
+    description: 'Alexa proactive events standalone process.'
+  });
 
-switch (myArgs[0]) {
-    case 'dev':
-        console.log('Development endpoint selected.');
-        break;
-    case 'pro':
-        console.log('Production endpoint selected.');
-        break;
-    default:
-        console.log('You must specify an enviroment. Valid options are "dev" or "pro".');
-        process.exit(1);
-}
+  parser.addArgument(
+    [ '-e', '--environment' ],
+    {
+        required:true,
+        help: 'Used to choose the Alexa endpoint to send proactive events. Possible values are "dev" or "pro".'
+    }
+  );
 
-switch (myArgs[1]) {
-    case 'FE':
-        console.log('Using Far East endpoint.');
-        break;
-    case 'EU':
-        console.log('Using Europe endpoint.');
-        break;
-    case 'NA':
-        console.log('Using North America endpoint.');
-        break;
-    default:
-        console.log('You must specify a region. Valid options are "NA", "EU" or "FE".');
-        process.exit(1);
-}
+  parser.addArgument(
+    [ '-r', '--region' ],
+    {
+        required:true,
+        help: 'Choose the region of the Alexa endpoint to use to send proactive events. Possible values are "NA", "FE" or "EU".'
+    }
+  );
 
-const environment = myArgs[0];
-const region = myArgs[1];
+var args = parser.parseArgs();
+console.dir(args);
 
 const skills = require("./skills.json");
 
@@ -128,7 +122,7 @@ if (invalid_skills.length > 0){
     process.exit(1);
 }
 
-const config = require("./config.json").filter(elem => elem.region === region && elem.environment === environment);
+const config = require("./config.json").filter(elem => elem.region === args.region && elem.environment === args.environment);
 
 if (!config || config.length == 0){
     console.log("Please check the configuration file for any error.");
