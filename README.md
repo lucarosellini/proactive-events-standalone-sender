@@ -74,14 +74,14 @@ To download project dependencies simply run the following in the project root:
 
 ### Howto run
 
-You need to pass two command line arguments:
+You need to pass the following command line arguments:
 * ```environment```: whether the target events will be sent to the ```live``` or ```development``` endpoints. Allowed values are ```dev``` and ```pro```.
 * ```region```: identifies the region of the Alexa endpoint to use to send proactive events. Allowed values are ```EU``` (Europe), ```NA``` (North America) and ```FE``` (Far East). **Remember**: if your users are located in NA and you are sending events trough the EU endpoint, users located in NA won't receive any notification.
 * ```message```: this is optional and lets you override the message property defined in [```skills.json```](./skills.json). If you pass the message through this argument, the same message will be sent to all skills configured in [```skills.json```](./skills.json).
 
 Once you've configured your skill ```client_id``` and ```client_secret``` in [```skills.json```](./skills.json), you can just run the project as:
 
-    node index.js -e <environment> -r <region>
+    node index.js -e <environment> -r <region> -m <message>
 
 For example:
 
